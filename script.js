@@ -1,14 +1,5 @@
 'use strict';
 
-
-// console.log(document.querySelector(`.message`).textContent)
-// document.querySelector(`.message`).textContent = `Guess the number`
-// document.querySelector(`.number`).textContent  = 13
-// document.querySelector(`.score`).textContent  = 2
-
-// document.querySelector(`.guess`).value = 23
-// console.log(document.querySelector(`.guess`).value)
-
 let guess;
 let highscore = 0;
 let max = 20;
@@ -31,6 +22,7 @@ document.querySelector(`.score`).textContent = `${score}`;
 document.querySelector(`.guess`).value = 0;
 document.querySelector(`.number`).textContent = `?`;
 document.querySelector(`.check`).addEventListener(`click`, check);
+document.querySelector('.guess').addEventListener('keypress', enter);
 }
 
 function check() {
@@ -50,6 +42,7 @@ function check() {
       document.querySelector(`.number`).textContent = hiddenNumber;
       document.querySelector('body').style.backgroundColor = `#60b347`;
       document.querySelector(`.check`).removeEventListener(`click`, check);
+      document.querySelector('.guess').removeEventListener('keypress', enter);
       if(score>highscore){highscore = score;
         document.querySelector(`.highscore`).textContent = highscore;}
     }
@@ -58,6 +51,7 @@ function check() {
         document.querySelector(`.number`).textContent = hiddenNumber;
         document.querySelector('body').style.backgroundColor = `#a02020`;
         document.querySelector(`.check`).removeEventListener(`click`, check);
+        document.querySelector('.guess').removeEventListener('keypress', enter);
     }
 };
 
@@ -69,6 +63,12 @@ function ranges(){
       document.querySelector(`.guess`).value = 1;
     }
 }
+function enter(e) {
+  if (e.key === 'Enter') {
+    check();
+  }
+}
+
 
 
 
@@ -77,3 +77,4 @@ document.querySelector(`.again`).addEventListener(`click`, again);
 document.querySelectorAll('input[name="difficulty"]').forEach((elem) => {
     elem.addEventListener("change", again)})
 document.querySelector(`.guess`).addEventListener('input', ranges);
+document.querySelector('.guess').addEventListener('keypress', enter);
