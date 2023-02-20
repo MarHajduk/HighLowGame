@@ -3,7 +3,7 @@
 let guess;
 let highscore = 0;
 let max = 20;
-let hiddenNumber = Math.floor(Math.random() * 20);
+let hiddenNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 10
 let diff = document.getElementsByName(`difficulty`)
 document.querySelector(`.score`).textContent = `${score}`;
@@ -12,7 +12,7 @@ function again(){
 for(let i=0;i<3;i++){
 if(diff[i].checked){max = diff[i].value}
 };
-hiddenNumber = Math.floor(Math.random() * max);
+hiddenNumber = Math.trunc(Math.random() * max) + 1;
 score = 10;
 document.querySelector('body').style.backgroundColor = `#222222`;
 document.querySelector(`.guess`).max = max;
