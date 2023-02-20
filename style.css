@@ -81,23 +81,8 @@ h1 {
   right: 2rem;
 }
 
-@media all and (max-width: 520px){
-  .difficulty {
-  display: flex;
-  flex-direction: column;
-}
-.label-score {
-  font-size: 1.7rem;
-}
-.label-highscore {
-  font-size: 1.7rem;
-}
-}
-.again {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-}
+
+
 
 .guess {
   background: none;
@@ -106,7 +91,8 @@ h1 {
   color: inherit;
   font-size: 5rem;
   padding: 2.5rem;
-  width: 25rem;
+  width: 100%;
+  max-width: 25rem;
   text-align: center;
   display: block;
   margin-bottom: 3rem;
@@ -118,6 +104,8 @@ h1 {
   color: #222;
   font-size: 2rem;
   font-family: inherit;
+  width: 100%;
+  max-width: 25rem;
   padding: 2rem 3rem;
   cursor: pointer;
 }
@@ -126,11 +114,60 @@ h1 {
   background-color: #ccc;
 }
 
+.again {
+  position: absolute;
+  max-width: 18rem;
+  top: 2rem;
+  left: 2rem;
+}
+
 .message {
-  margin-bottom: 8rem;
+  margin-bottom: 3rem;
   height: 3rem;
 }
 
 .label-score {
   margin-bottom: 2rem;
+}
+
+@media all and (max-width: 520px){
+h1 {
+    font-size: 2.2rem;
+}
+.left {
+  width: 30%;
+  margin: 2%
+}
+.difficulty {
+  display: flex;
+  flex-direction: column;
+}
+.label-score {
+  font-size: 1.7rem;
+}
+.label-highscore {
+  font-size: 1.7rem;
+}
+.number {
+  font-size: 4rem;
+}
+header{
+  height: 50vh;
+}
+.guess{
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.btn {
+font-size: 2rem;
+padding: 0;
+padding-top: 1rem;
+padding-bottom: 1rem;
+}
+.again {
+padding: 2.5rem;
+}
+.message{
+  font-size: 1.7rem;
+}
 }

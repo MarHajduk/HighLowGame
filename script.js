@@ -65,7 +65,7 @@ function ranges(){
     if(Number(document.querySelector(`.guess`).value)>max){
         document.querySelector(`.guess`).value = max;
     }
-    if (Number(document.querySelector(`.guess`).value) < 1) {
+    if (Number(document.querySelector(`.guess`).value) < 0) {
       document.querySelector(`.guess`).value = 1;
     }
 }
